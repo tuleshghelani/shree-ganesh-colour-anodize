@@ -428,3 +428,53 @@ $light-shadow: rgba(0, 0, 0, 0.1);
     opacity: 1;
   }
 }
+
+// Add or update the logo styles in the header component SCSS
+.brand-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 8px 0;
+  
+  img {
+    max-height: 60px;
+    width: auto;
+    transition: all 0.3s ease;
+    
+    @media (min-width: 992px) {
+      max-height: 70px; // Larger on desktop
+    }
+    
+    @media (max-width: 576px) {
+      max-height: 50px; // Slightly smaller on mobile
+    }
+  }
+}
+
+// When header is scrolled and becomes sticky
+.navbar.sticky {
+  .brand-logo {
+    img {
+      max-height: 50px; // Slightly smaller when scrolled
+      
+      @media (max-width: 576px) {
+        max-height: 40px;
+      }
+    }
+  }
+}
+
+// Make sure the navbar container has proper padding
+.navbar {
+  padding: 0.5rem 1rem;
+  
+  @media (min-width: 992px) {
+    padding: 0.5rem 2rem;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
