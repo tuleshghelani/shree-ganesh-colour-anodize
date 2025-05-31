@@ -1,0 +1,303 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-slider">
+    <div class="slide" [ngClass]="{'active': currentSlide === 0}">
+      <div class="slide-content">
+        <h1 data-aos="fade-up">Premium Colour Anodizing Solutions</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Enhance your aluminum products with vibrant, durable and corrosion-resistant finishes</p>
+        <a routerLink="/services/colour-anodizing" class="btn btn-primary" data-aos="fade-up" data-aos-delay="400">Explore Services</a>
+      </div>
+      <div class="overlay"></div>
+      <div class="bg-image" style="background-image: url('/assets/home/slider-1.jpeg');"></div>
+    </div>
+    
+    <div class="slide" [ngClass]="{'active': currentSlide === 1}">
+      <div class="slide-content">
+        <h1 data-aos="fade-up">Professional Chrome Plating</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Achieve superior shine and protection with our industry-leading chrome plating services</p>
+        <a routerLink="/services/chrome-plating" class="btn btn-primary" data-aos="fade-up" data-aos-delay="400">Discover More</a>
+      </div>
+      <div class="overlay"></div>
+      <div class="bg-image" style="background-image: url('/assets/home/slider-2.jpg');"></div>
+    </div>
+    
+    <div class="slide" [ngClass]="{'active': currentSlide === 2}">
+      <div class="slide-content">
+        <h1 data-aos="fade-up">Expert Powder Coating Services</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Durable, eco-friendly coating solutions with exceptional finish quality</p>
+        <a routerLink="/services/powder-coating" class="btn btn-primary" data-aos="fade-up" data-aos-delay="400">Learn More</a>
+      </div>
+      <div class="overlay"></div>
+      <div class="bg-image" style="background-image: url('/assets/home/slider-1.jpeg');"></div>
+    </div>
+    
+    <div class="slide" [ngClass]="{'active': currentSlide === 3}">
+      <div class="slide-content">
+        <h1 data-aos="fade-up">Custom Finishing Solutions</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Tailored surface treatment services for your unique industrial requirements</p>
+        <a routerLink="/contact" class="btn btn-primary" data-aos="fade-up" data-aos-delay="400">Get a Quote</a>
+      </div>
+      <div class="overlay"></div>
+      <div class="bg-image" style="background-image: url('/assets/home/slider-2.jpg');"></div>
+    </div>
+    
+    <div class="slider-controls">
+      <button class="prev" (click)="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+      <div class="indicators">
+        <button *ngFor="let slide of slides; let i = index" 
+                [ngClass]="{'active': currentSlide === i}"
+                (click)="goToSlide(i)"></button>
+      </div>
+      <button class="next" (click)="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" data-aos="fade-right">
+        <h2 class="section-title">About Shree Ganesh Colour Anodize</h2>
+        <p class="lead">Delivering excellence in metal surface treatments for over a decade.</p>
+        <p>At Shree Ganesh Colour Anodize, we specialize in premium quality colour anodizing, chrome plating, and powder coating services for industries across the spectrum. Our state-of-the-art facility and expert team ensure superior finishing that enhances both the appearance and performance of your products.</p>
+        <p>With a commitment to quality, consistency and customer satisfaction, we've established ourselves as leaders in the surface treatment industry.</p>
+        <a routerLink="/about" class="btn btn-secondary mt-4">Learn More About Us</a>
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <div class="about-image">
+          <img src="/assets/home/anodizing.jpg" alt="Shree Ganesh Colour Anodize Facility" class="img-fluid rounded shadow">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Our Premium Services</h2>
+    <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">Comprehensive surface treatment solutions tailored to your specific requirements</p>
+    
+    <div class="row">
+      <div class="col-md-4" *ngFor="let service of services; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas {{ service.icon }}"></i>
+          </div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+          <ul class="benefits-list">
+            <li *ngFor="let benefit of service.benefits">
+              <i class="fas fa-check"></i> {{ benefit }}
+            </li>
+          </ul>
+          <a [routerLink]="'/services/' + service.title.toLowerCase().replace(' ', '-')" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process Section -->
+<section class="process bg-light">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Our Premium Process</h2>
+    <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">We follow a meticulous process to ensure consistent quality and superior results</p>
+    
+    <div class="process-steps">
+      <div class="process-step" data-aos="fade-up">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <h3>Consultation & Assessment</h3>
+          <p>We begin with a thorough consultation to understand your requirements, analyze materials, and determine the most suitable surface treatment solution.</p>
+        </div>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <h3>Surface Preparation</h3>
+          <p>Meticulous cleaning and preparation of your components to ensure optimal adhesion and finish quality for the selected treatment process.</p>
+        </div>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <h3>Treatment Application</h3>
+          <p>Application of the specified surface treatment using advanced equipment and proven techniques to achieve superior results.</p>
+        </div>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+        <div class="step-number">04</div>
+        <div class="step-content">
+          <h3>Quality Control</h3>
+          <p>Rigorous inspection and testing to ensure each component meets our stringent quality standards and your specific requirements.</p>
+        </div>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+        <div class="step-number">05</div>
+        <div class="step-content">
+          <h3>Delivery & Support</h3>
+          <p>Careful packaging and timely delivery of your finished components with ongoing technical support to ensure complete satisfaction.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="why-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" data-aos="fade-right">
+        <div class="why-us-image">
+          <img src="/assets/home/crome-planting.jpg" alt="Quality Control at Shree Ganesh Colour Anodize" class="img-fluid rounded shadow">
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <h2 class="section-title">Why Choose Shree Ganesh</h2>
+        <p class="lead">Beyond standard surface treatments – we deliver excellence.</p>
+        
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Superior Quality</h3>
+            <p>State-of-the-art equipment and stringent quality control measures ensure exceptional finish quality and consistency.</p>
+          </div>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Technical Expertise</h3>
+            <p>Our team of surface treatment specialists bring years of experience and technical knowledge to every project.</p>
+          </div>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Customized Solutions</h3>
+            <p>Tailored surface treatment processes designed to meet your specific requirements and performance standards.</p>
+          </div>
+        </div>
+        
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-truck"></i>
+          </div>
+          <div class="feature-content">
+            <h3>Reliable Service</h3>
+            <p>Consistent quality, on-time delivery and responsive customer service for a seamless experience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials bg-light">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Client Testimonials</h2>
+    <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">Don't just take our word for it - here's what our clients have to say</p>
+    
+    <div class="row">
+      <div class="col-md-4" *ngFor="let testimonial of testimonials; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+        <div class="testimonial-card">
+          <div class="rating">
+            <i class="fas fa-star" *ngFor="let star of [].constructor(testimonial.rating)"></i>
+          </div>
+          <p class="quote">"{{ testimonial.comment }}"</p>
+          <div class="client-info">
+            <h4>{{ testimonial.name }}</h4>
+            <p>{{ testimonial.company }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-content text-center">
+      <h2 data-aos="fade-up">Ready to Enhance Your Products?</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Contact us today for a consultation and discover how our premium surface treatment solutions can elevate your products.</p>
+      <a routerLink="/contact" class="btn btn-primary btn-lg mt-4" data-aos="fade-up" data-aos-delay="200">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq bg-light">
+  <div class="container">
+    <h2 class="section-title text-center" data-aos="fade-up">Frequently Asked Questions</h2>
+    <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">Find answers to common questions about our services</p>
+    
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item" data-aos="fade-up">
+        <h3 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            What is colour anodizing and how does it benefit my products?
+          </button>
+        </h3>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Colour anodizing is an electrochemical process that creates a durable, porous oxide layer on aluminum surfaces which can then be dyed in various colors. The benefits include enhanced corrosion resistance, improved wear resistance, increased product lifespan, and aesthetic enhancement with vibrant color options that won't chip or peel like paint.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            How durable is chrome plating compared to other finishes?
+          </button>
+        </h3>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Chrome plating offers exceptional durability compared to many other surface finishes. It provides superior hardness (up to 1000 Hv), excellent wear resistance, and outstanding corrosion protection. Chrome-plated surfaces can withstand harsh environments, chemicals, and abrasion much better than painted surfaces and most other decorative finishes, often lasting for decades with proper care.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            What materials can be powder coated?
+          </button>
+        </h3>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Powder coating works best on conductive materials, primarily metals. Common materials suitable for powder coating include steel, aluminum, galvanized and zinc-coated metals, and some metal alloys. While primarily used on metals, some specialized powder coating processes can also be applied to certain non-metallic materials like medium-density fiberboard (MDF) and some composites through pre-treatment processes.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            What is your typical turnaround time for orders?
+          </button>
+        </h3>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Our standard turnaround time varies depending on the type of service, quantity, and complexity of the project. Typically, smaller orders can be completed within 5-7 business days, while larger or more complex projects may require 10-14 business days. For urgent requirements, we offer expedited services subject to availability. We recommend contacting our team for a specific timeline estimate for your project.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
