@@ -1,0 +1,203 @@
+<!-- Page Banner -->
+<section class="page-banner">
+  <div class="container">
+    <div class="banner-content">
+      <h1>About Us</h1>
+      <p>Learn about our journey, values, and commitment to excellence</p>
+    </div>
+  </div>
+</section>
+
+<!-- Company Overview Section -->
+<section class="company-overview">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <img src="assets/about-us/company.jpg" alt="Shree Ganesh Colour Anodize Facility" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="section-header">
+          <h2>Our Company</h2>
+          <div class="section-divider"></div>
+        </div>
+        <p class="lead"><strong>Transforming visions into reality through premium surface treatments since 2010.</strong></p>
+        <p>At Shree Ganesh Colour Anodize, we have established ourselves as industry leaders in providing exceptional surface treatment solutions for a wide range of industries. Our state-of-the-art facility equipped with advanced technology enables us to deliver consistently high-quality results that meet and exceed our clients' expectations.</p>
+        <p>With over {{yearsOfExperience}} years of experience, our team of skilled professionals brings technical expertise and attention to detail to every project, ensuring superior finishes that enhance both the appearance and performance of your products.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Mission Section -->
+<section class="mission-section bg-light">
+  <div class="container">
+    <div class="row mission-row">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="mission-content">
+          <div class="section-header">
+            <h2>Our Mission</h2>
+            <div class="section-divider"></div>
+          </div>
+          <p>To provide premium quality surface treatment solutions that enhance product performance, durability, and aesthetic appeal while maintaining the highest standards of quality, consistency, and customer service.</p>
+          <ul class="mission-points">
+            <li><i class="fas fa-check-circle"></i> Deliver consistent quality across all projects</li>
+            <li><i class="fas fa-check-circle"></i> Invest in advanced technology and techniques</li>
+            <li><i class="fas fa-check-circle"></i> Maintain stringent quality control measures</li>
+            <li><i class="fas fa-check-circle"></i> Provide customized solutions for diverse industry needs</li>
+            <li><i class="fas fa-check-circle"></i> Uphold environmental responsibility in all processes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="vision-content">
+          <div class="section-header">
+            <h2>Our Vision</h2>
+            <div class="section-divider"></div>
+          </div>
+          <p>To be the most trusted and innovative surface treatment provider, recognized for our technical expertise, superior quality, and commitment to sustainability.</p>
+          <div class="vision-box">
+            <div class="vision-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <div class="vision-text">
+              <h3>Excellence</h3>
+              <p>Setting the industry standard for quality and reliability</p>
+            </div>
+          </div>
+          <div class="vision-box">
+            <div class="vision-icon">
+              <i class="fas fa-flask"></i>
+            </div>
+            <div class="vision-text">
+              <h3>Innovation</h3>
+              <p>Continuously improving and adopting cutting-edge technologies</p>
+            </div>
+          </div>
+          <div class="vision-box">
+            <div class="vision-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <div class="vision-text">
+              <h3>Partnership</h3>
+              <p>Building lasting relationships with clients through exceptional service</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Values Section -->
+<section class="values-section">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <h2>Our Core Values</h2>
+      <div class="section-divider centered"></div>
+      <p class="lead">The principles that guide everything we do</p>
+    </div>
+    
+    <div class="row values-row">
+      <div class="col-md-3 col-6" *ngFor="let value of values; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas {{ value.icon }}"></i>
+          </div>
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Company History/Milestones Section -->
+<section class="history-section bg-light">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <h2>Our Journey</h2>
+      <div class="section-divider centered"></div>
+      <p class="lead">Key milestones in our company's history</p>
+    </div>
+    
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let milestone of milestones; let i = index" [ngClass]="{'right': i % 2 !== 0}" data-aos="fade-up">
+        <div class="timeline-badge">
+          <span>{{ milestone.year }}</span>
+        </div>
+        <div class="timeline-panel">
+          <div class="timeline-heading">
+            <h3>{{ milestone.title }}</h3>
+          </div>
+          <div class="timeline-body">
+            <p>{{ milestone.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Process Section -->
+<section class="process-section">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <h2>Our Process</h2>
+      <div class="section-divider centered"></div>
+      <p class="lead">How we ensure exceptional quality in every project</p>
+    </div>
+    
+    <div class="process-steps">
+      <div class="process-step" data-aos="fade-up">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <h3>Consultation</h3>
+          <p>We begin with a thorough consultation to understand your unique requirements and objectives, analyzing materials and determining the optimal treatment approach.</p>
+        </div>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <h3>Material Analysis</h3>
+          <p>Our technical team conducts comprehensive material analysis to identify the most suitable treatment process and parameters for your specific components.</p>
+        </div>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <h3>Surface Preparation</h3>
+          <p>Meticulous cleaning and preparation of surfaces to ensure optimal adhesion and finish quality for the selected treatment process.</p>
+        </div>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+        <div class="step-number">04</div>
+        <div class="step-content">
+          <h3>Treatment Application</h3>
+          <p>Application of the specified surface treatment using advanced techniques and precision equipment to achieve superior results.</p>
+        </div>
+      </div>
+      
+      <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+        <div class="step-number">05</div>
+        <div class="step-content">
+          <h3>Quality Control</h3>
+          <p>Rigorous inspection and testing to ensure each component meets our stringent quality standards and your specific requirements.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content text-center">
+      <h2 data-aos="fade-up">Ready to Transform Your Products?</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Contact us today to discuss how our premium surface treatment solutions can enhance your products.</p>
+      <a routerLink="/contact" class="btn btn-primary btn-lg mt-4" data-aos="fade-up" data-aos-delay="200">Get in Touch</a>
+    </div>
+  </div>
+</section>
