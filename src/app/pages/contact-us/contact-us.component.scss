@@ -1,0 +1,468 @@
+// Page Header
+.page-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/images/contact-header.jpg') center/cover no-repeat;
+  padding: 60px 0;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 60px;
+  margin-top: 80px;
+  
+  h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  .breadcrumbs {
+    color: #ccc;
+    font-size: 16px;
+    
+    a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+      
+      &:hover {
+        color: #DC1E24;
+      }
+    }
+    span{
+      color: #DC1E24;
+    }
+  }
+}
+
+// Section Headers
+.section-headers {
+  margin-bottom: 25px;
+  
+  .section-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #2c3e50;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #DC1E24;
+    }
+  }
+}
+
+// Contact Section
+.contact-section {
+  padding: 0 0 60px;
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .contact-card {
+    background-color: #f8f9fa;
+    width: calc(46% - 15px);
+    border-top: 2px solid #DC1E24;
+    padding: 25px;
+    position: relative;
+    
+    .card-header {
+      padding: 0;
+      margin-bottom: 20px;
+      background-color: transparent;
+      border: none;
+      
+      .section-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+      
+      .title-underline {
+        width: 60px;
+        height: 3px;
+        background-color: #DC1E24;
+        margin-bottom: 15px;
+      }
+    }
+    
+    p {
+      color: #444;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .info-list {
+    margin-bottom: 20px;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    
+    .info-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(220, 30, 36, 0.1);
+      border-radius: 50%;
+      margin-right: 15px;
+      color: #DC1E24;
+      font-size: 18px;
+    }
+    
+    .info-content {
+      h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 5px;
+      }
+      
+      p {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        color: #444;
+        line-height: 1.6;
+      }
+    }
+  }
+  
+  .connect-section {
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 15px;
+    }
+    
+    .social-links {
+      display: flex;
+      
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background-color: #f1f1f1;
+        color: #333;
+        border-radius: 50%;
+        margin-right: 12px;
+        text-decoration: none;
+        transition: all 0.3s;
+        font-size: 16px;
+        
+        &:hover {
+          background-color: #DC1E24;
+          color: #fff;
+        }
+      }
+    }
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #333;
+      font-size: 16px;
+    }
+    
+    .form-control {
+      width: 80%;
+      height: auto;
+      padding: 10px 15px;
+      font-size: 15px;
+      border: 1px solid #ddd;
+      border-radius: 0;
+      transition: border-color 0.3s;
+      background-color: #fff;
+      
+      &:focus {
+        border-color: #DC1E24;
+        box-shadow: none;
+        outline: none;
+      }
+      
+      &::placeholder {
+        color: #aaa;
+      }
+    }
+    
+    textarea.form-control {
+      height: auto;
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    .invalid-feedback {
+      display: block;
+      color: #DC1E24;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  }
+  
+  .btn-primary {
+    background-color: #DC1E24;
+    border-color: #DC1E24;
+    color: #fff;
+    font-weight: 500;
+    padding: 12px 28px;
+    border-radius: 0;
+    transition: all 0.3s;
+    font-size: 16px;
+    
+    &:hover {
+      background-color: #b30000;
+      border-color: #b30000;
+    }
+    
+    &:disabled {
+      opacity: 0.7;
+    }
+  }
+  
+  .text-danger {
+    color: #DC1E24;
+  }
+  
+  .alert {
+    padding: 12px 15px;
+    border-radius: 0;
+    font-size: 15px;
+    
+    &.alert-success {
+      background-color: #d4edda;
+      color: #155724;
+      border-color: #c3e6cb;
+    }
+    
+    &.alert-danger {
+      background-color: #f8d7da;
+      color: #721c24;
+      border-color: #f5c6cb;
+    }
+  }
+}
+
+// Map Section
+.map-section {
+  padding-bottom: 60px;
+  
+  .map-container {
+    h2 {
+      font-size: 26px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0 auto;
+        width: 60px;
+        height: 3px;
+        background-color: #DC1E24;
+      }
+    }
+    
+    iframe {
+      border-radius: 0;
+      width: 100%;
+    }
+  }
+}
+
+// CTA Section
+.cta-section {
+  position: relative;
+  padding: 0;
+  margin-top: 60px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #eaeaea;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #DC1E24;
+  }
+  
+  .container {
+    padding: 0;
+  }
+  
+  .cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0;
+    
+    @media (max-width: 767px) {
+      flex-direction: column;
+      text-align: center;
+      padding: 30px 20px;
+    }
+  }
+  
+  .cta-text {
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      
+      @media (max-width: 767px) {
+        font-size: 24px;
+      }
+    }
+    
+    p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 0;
+      max-width: 600px;
+      
+      @media (max-width: 767px) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+  
+  .cta-action {
+    .btn-call {
+      display: flex;
+      align-items: center;
+      background-color: #DC1E24;
+      color: #fff;
+      padding: 0;
+      border-radius: 4px;
+      text-decoration: none;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(220, 30, 36, 0.3);
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: #b30000;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(220, 30, 36, 0.4);
+      }
+      
+      .btn-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        
+        i {
+          font-size: 20px;
+        }
+      }
+      
+      .btn-text {
+        padding: 0 20px;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}
+
+// Responsive styling
+@media (max-width: 767px) {
+  .contact-section {
+    .container {
+    //   flex-direction: column;
+    }
+    
+    .contact-card {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+  
+  .page-header {
+    padding: 40px 0;
+    margin-bottom: 40px;
+    margin-top: 80px;
+    
+    h1 {
+      font-size: 32px;
+      color: #fff;
+    }
+  }
+  
+  .map-section .map-container h2 {
+    font-size: 22px;
+  }
+  
+  .cta-section h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 575px) {
+  .contact-section .contact-card {
+    padding: 20px;
+  }
+  
+  .cta-section {
+    .cta-action {
+      width: 100%;
+      
+      .btn-call {
+        justify-content: center;
+        width: 100%;
+        
+        .btn-icon {
+          padding: 15px;
+        }
+      }
+    }
+  }
+}
+
+// Border styles
+.contact-section .row:before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  height: 1px;
+  background-color: #eee;
+  top: -15px;
+}
+

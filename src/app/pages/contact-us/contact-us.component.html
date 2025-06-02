@@ -1,0 +1,215 @@
+<!-- Page Header -->
+<section class="page-header">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <div class="breadcrumbs">
+      <a routerLink="/">Home</a> / <span>Contact Us</span>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+  <div class="container">
+    <!-- Get in Touch Card -->
+    <div class="contact-card">
+      <div class="card-header">
+        <h2 class="section-title">GET IN TOUCH</h2>
+        <div class="title-underline"></div>
+      </div>
+      
+      <p>We're here to help with your surface treatment needs</p>
+      
+      <div class="info-list">
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="info-content">
+            <h3>Our Location</h3>
+            <p>Meera Udhyog. Street No.3, Plot No.17 , N.H. 8B<br>
+                Nr. Bansidhar Way Bridge, Rajkot, Gujarat - 360002<br>India</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="info-content">
+            <h3>Call Us</h3>
+            <p> Mayur Patel:<a href="tel:+919979916168">+91 99799 16168</a><br>
+                Kalpesh Patel: <a href="tel:+919537057565">+91 95370 57565</a></p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="info-content">
+            <h3>Email Us</h3>
+            <p><a href="mailto:info&#64;shreeganeshanodize.com">info&#64;shreeganeshanodize.com</a><br>
+                <a href="mailto:shreeganeshanodize&#64;gmail.com">shreeganeshanodize&#64;gmail.com</a></p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="info-content">
+            <h3>Business Hours</h3>
+            <p>Thursday - Tuesday : 8:00 AM to 8:00 PM<br>Wednesday : Closed</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="connect-section">
+        <h3>Connect With Us</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Send Us a Message Card -->
+    <div class="contact-card">
+      <div class="card-header">
+        <h2 class="section-title">SEND US A MESSAGE</h2>
+        <div class="title-underline"></div>
+      </div>
+      
+      <p>Fill out the form below, and we'll get back to you promptly</p>
+      
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
+          <label for="name">Full Name <span class="text-danger">*</span></label>
+          <input 
+            type="text" 
+            id="name" 
+            formControlName="name" 
+            class="form-control" 
+            [ngClass]="{'is-invalid': submitted && f['name'].errors}"
+            placeholder="Your Name">
+          <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+            <div *ngIf="f['name'].errors['required']">Name is required</div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address <span class="text-danger">*</span></label>
+          <input 
+            type="email" 
+            id="email" 
+            formControlName="email" 
+            class="form-control" 
+            [ngClass]="{'is-invalid': submitted && f['email'].errors}"
+            placeholder="Your Email">
+          <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+            <div *ngIf="f['email'].errors['required']">Email is required</div>
+            <div *ngIf="f['email'].errors['email']">Please enter a valid email address</div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone Number <span class="text-danger">*</span></label>
+          <input 
+            type="text" 
+            id="phone" 
+            formControlName="phone" 
+            class="form-control"
+            [ngClass]="{'is-invalid': submitted && f['phone'].errors}"
+            placeholder="Your Phone">
+            <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
+              <div *ngIf="f['phone'].errors['required']">Phone is required</div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="subject">Subject <span class="text-danger">*</span></label>
+          <input 
+            type="text" 
+            id="subject" 
+            formControlName="subject" 
+            class="form-control" 
+            [ngClass]="{'is-invalid': submitted && f['subject'].errors}"
+            placeholder="Subject">
+          <div *ngIf="submitted && f['subject'].errors" class="invalid-feedback">
+            <div *ngIf="f['subject'].errors['required']">Subject is required</div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Your Message <span class="text-danger">*</span></label>
+          <textarea
+            id="message"
+            rows="5"
+            formControlName="message"
+            class="form-control"
+            [ngClass]="{'is-invalid': submitted && f['message'].errors}" 
+            placeholder="Your Message"></textarea>
+          <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
+            <div *ngIf="f['message'].errors['required']">Message is required</div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" [disabled]="loading">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Send Message
+          </button>
+        </div>
+        
+        <div *ngIf="successMessage" class="alert alert-success mt-3">
+          {{ successMessage }}
+        </div>
+        
+        <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+          {{ errorMessage }}
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Map Section -->
+<section class="map-section mt-5">
+  <div class="container">
+    <div class="map-container">
+      <h2>Find Us</h2>
+      
+    </div>
+  </div>
+</section>
+
+<iframe 
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2204.26408804088!2d70.826096!3d22.27032!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959b593fa29b11d%3A0x871546eef2f473ba!2sShree%20Ganesh%20Colour%20Anodize!5e1!3m2!1sen!2sin!4v1748845247798!5m2!1sen!2sin" 
+    width="100%" 
+    height="450" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy"
+    title="Shree Ganesh Colour Anodize Location">
+</iframe>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <div class="cta-text">
+        <h2>Ready to Transform Your Products?</h2>
+        <p>Partner with us for premium surface treatment solutions that elevate quality and performance.</p>
+      </div>
+      <div class="cta-action">
+        <a href="tel:+919979916168" class="btn-call">
+          <span class="btn-icon"><i class="fas fa-phone-alt"></i></span>
+          <span class="btn-text">Call Us Now</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
