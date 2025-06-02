@@ -796,3 +796,45 @@
     pointer-events: auto;
   }
 }
+
+// Add new Tagline Section styling
+.tagline-section {
+  padding: 60px 0;
+  background: #c51c1c;
+  color: white;
+  text-align: center;
+  
+  .tagline-content {
+    max-width: 800px;
+    margin: 0 auto;
+    
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #fff;
+      
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
+    }
+    
+    .tagline-divider {
+      width: 80px;
+      height: 3px;
+      background: white;
+      margin: 0 auto 20px;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      color: white;
+      
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+  }
+}

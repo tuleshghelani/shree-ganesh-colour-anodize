@@ -71,13 +71,13 @@ export class HomeComponent implements OnInit {
   }
 
   private setupSEO() {
-    this.title.setTitle('Shree Ganesh Colour Anodize | Premium Colour Anodizing, Chrome Plating & Powder Coating');
+    this.title.setTitle('Shree Ganesh Colour Anodize | Transform Dream To Reality | Premium Surface Treatments');
     
     this.meta.addTags([
-      { name: 'description', content: 'Leading provider of premium colour anodizing, chrome plating, and powder coating services with superior durability and finishing for industrial and decorative applications.' },
-      { name: 'keywords', content: 'colour anodizing, color anodizing, chrome plating, powder coating, aluminium finishes, metal finishing, metal coating services, industrial coating, decorative coating' },
-      { property: 'og:title', content: 'Shree Ganesh Colour Anodize | Premium Surface Treatment Solutions' },
-      { property: 'og:description', content: 'Leading provider of premium colour anodizing, chrome plating, and powder coating services with superior durability' },
+      { name: 'description', content: 'Transform Dream To Reality with Shree Ganesh Colour Anodize - Leading provider of premium colour anodizing, chrome plating, and powder coating services with superior durability and finishing for industrial and decorative applications.' },
+      { name: 'keywords', content: 'transform dream to reality, colour anodizing, color anodizing, chrome plating, powder coating, aluminium finishes, metal finishing, metal coating services, industrial coating, decorative coating' },
+      { property: 'og:title', content: 'Shree Ganesh Colour Anodize | Transform Dream To Reality' },
+      { property: 'og:description', content: 'Transform Dream To Reality with our premium colour anodizing, chrome plating, and powder coating services with superior durability' },
       { property: 'og:type', content: 'website' },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Shree Ganesh Colour Anodize' }
@@ -89,6 +89,7 @@ export class HomeComponent implements OnInit {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
       name: 'Shree Ganesh Colour Anodize',
+      slogan: 'Transform Dream To Reality',
       description: 'Leading provider of premium colour anodizing, chrome plating, and powder coating services with superior durability and finishing for industrial and decorative applications.',
       image: '/assets/images/logo.png',
       priceRange: '₹',
