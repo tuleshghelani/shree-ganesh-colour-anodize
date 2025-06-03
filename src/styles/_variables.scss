@@ -41,7 +41,21 @@ $shadow-color: rgba($dark, 0.1);
 $weight-bold: 700;
 $weight-semibold: 600;
 $weight-medium: 500;
+// Neutral Colors
+$neutral-colors: (
+  'dark': #414544,
+  'medium': #909695,
+  'light': #c2c7c6,
+  'lighter': #e2e6e5,
+  'lightest': #f5f7f7
+);
 
+// Then keep the existing variable definitions for compatibility
+$neutral-dark: map-get($neutral-colors, 'dark');
+$neutral-medium: map-get($neutral-colors, 'medium');
+$neutral-light: map-get($neutral-colors, 'light');
+$neutral-lighter: map-get($neutral-colors, 'lighter');
+$neutral-lightest: map-get($neutral-colors, 'lightest');
 
 // Colors
 $primary-color: #ed3237;

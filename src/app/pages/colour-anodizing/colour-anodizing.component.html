@@ -1,1 +1,131 @@
-<p>colour-anodizing works!</p>
+<div class="colour-anodizing-container">
+    <section class="hero-section">
+      <div class="container">
+        <h1 class="main-title">Premium Colour Anodizing Services</h1>
+        <p class="subtitle">Industry-leading anodizing solutions with superior durability and vibrant finishes</p>
+      </div>
+    </section>
+  
+    <section class="content-section">
+      <div class="container">
+        <div class="intro-block">
+          <div class="intro-grid">
+            <!-- Image Column -->
+            <div class="intro-image">
+              <img 
+                src="assets/services/colour-anodize.jpg" 
+                alt="Premium Colour Anodizing Process"
+                loading="lazy"
+                class="responsive-image"
+              >
+            </div>
+            
+            <!-- Content Column -->
+            <div class="intro-content">
+              <h2>Expert Colour Anodizing Solutions for Every Industry</h2>
+              <p>At Shree Ganesh Colour Anodize, we deliver exceptional <strong>colour anodizing services</strong> that combine aesthetic appeal with unmatched durability. Our state-of-the-art processes ensure consistent, vibrant finishes that protect your aluminum components from corrosion while enhancing their visual appeal.</p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="benefits-block">
+          <h2>Why Choose Our Colour Anodizing Services?</h2>
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <h3>Superior Durability</h3>
+              <p>Our anodized finishes create a hard, protective layer that resists scratches, corrosion, and wear - extending the life of your aluminum products.</p>
+            </div>
+            <div class="benefit-card">
+              <h3>Vibrant, Consistent Colours</h3>
+              <p>Advanced dyeing techniques ensure rich, uniform colour that won't fade or deteriorate over time, even in harsh environments.</p>
+            </div>
+            <div class="benefit-card">
+              <h3>Environmentally Friendly</h3>
+              <p>Our anodizing processes are eco-conscious, using sustainable methods that minimize environmental impact while maximizing quality.</p>
+            </div>
+            <div class="benefit-card">
+              <h3>Precision Colour Matching</h3>
+              <p>We offer exact colour matching to your specifications, ensuring consistency across all your components and production runs.</p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="process-block">
+          <h2>Our Advanced Colour Anodizing Process</h2>
+          <div class="process-steps">
+            <div class="step">
+              <h3>1. Surface Preparation</h3>
+              <p>Thorough cleaning and preparation of aluminum surfaces to ensure optimal adhesion and finish quality.</p>
+            </div>
+            <div class="step">
+              <h3>2. Anodizing Treatment</h3>
+              <p>Electrochemical process that creates a durable, porous oxide layer on the aluminum surface.</p>
+            </div>
+            <div class="step">
+              <h3>3. Precision Colouring</h3>
+              <p>Advanced dyeing techniques that deliver vibrant, consistent colour throughout the anodized layer.</p>
+            </div>
+            <div class="step">
+              <h3>4. Sealing</h3>
+              <p>Final sealing process that locks in colour and enhances corrosion resistance for long-lasting protection.</p>
+            </div>
+            <div class="step">
+              <h3>5. Quality Control</h3>
+              <p>Rigorous inspection ensuring every piece meets our exacting standards for colour consistency and finish quality.</p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="applications-block">
+          <h2>Industries We Serve</h2>
+          <div class="applications-grid">
+            <div class="application-card">
+              <h3>Architectural</h3>
+              <p>Facades, window frames, railings, and decorative elements with weather-resistant finishes.</p>
+            </div>
+            <div class="application-card">
+              <h3>Automotive</h3>
+              <p>Interior and exterior trim, wheels, and performance parts with durable, attractive finishes.</p>
+            </div>
+            <div class="application-card">
+              <h3>Consumer Electronics</h3>
+              <p>Housings, bezels, and components with premium, scratch-resistant finishes.</p>
+            </div>
+            <div class="application-card">
+              <h3>Aerospace</h3>
+              <p>Critical components requiring precise specifications and superior corrosion resistance.</p>
+            </div>
+            <div class="application-card">
+              <h3>Medical Devices</h3>
+              <p>Equipment and instruments requiring sterilizable, biocompatible finishes.</p>
+            </div>
+            <div class="application-card">
+              <h3>Sporting Goods</h3>
+              <p>Bicycle components, fishing reels, and other equipment requiring lightweight durability.</p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="faq-block">
+          <h2>Frequently Asked Questions About Colour Anodizing</h2>
+          <div class="faq-list">
+            <div class="faq-item" *ngFor="let faq of faqItems; let i = index">
+              <div class="faq-question" (click)="toggleFaq(i)">
+                <h3>{{ faq.question }}</h3>
+                <span class="toggle-icon" [class.open]="faq.open">›</span>
+              </div>
+              <div class="faq-answer" [class.open]="faq.open">
+                <p>{{ faq.answer }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="cta-block">
+          <h2>Ready to Enhance Your Products?</h2>
+          <p>Contact our team today to discuss your colour anodizing requirements and discover how our premium services can elevate your products.</p>
+          <button class="cta-button"><a href="/contact-us">Request a Consultation</a></button>
+        </div>
+      </div>
+    </section>
+</div>

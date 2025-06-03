@@ -17,5 +17,9 @@ export const routes: Routes = [
     path: 'services/colour-anodizing',
     loadComponent: () => import('./pages/colour-anodizing/colour-anodizing.component').then(m => m.ColourAnodizingComponent)
   },
+  {
+    path: '**',
+    redirectTo: ''
+  }
   // ... other routes
 ];
