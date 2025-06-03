@@ -19,6 +19,14 @@ export class HeaderComponent implements OnInit {
   isMobileMenuOpen = false;
   isSticky = false;
   hideTopBar = false;
+  activeSubmenu: string | null = null;
+  
+  // Service submenu items
+  serviceSubmenuItems = [
+    { name: 'COLOUR ANODIZING', url: '/services/colour-anodizing' },
+    { name: 'CHROME PLATING', url: '/services/chrome-plating' },
+    { name: 'POWDER COATING', url: '/services/powder-coating' }
+  ];
 
   constructor(private router: Router) {
     // Subscribe to router events and scroll to top on navigation
@@ -36,6 +44,7 @@ export class HeaderComponent implements OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.closeMobileMenu();
+        this.closeAllSubmenus();
       }
     });
   }
@@ -63,17 +72,39 @@ export class HeaderComponent implements OnInit {
       this.document.body.classList.remove('no-scroll');
     }
   }
+  
+  toggleSubmenu(submenu: string, event?: Event): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    
+    this.activeSubmenu = this.activeSubmenu === submenu ? null : submenu;
+  }
+  
+  closeAllSubmenus(): void {
+    this.activeSubmenu = null;
+  }
 
-  // Close mobile menu when clicking outside
+  // Close mobile menu and submenus when clicking outside
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
     if (!isPlatformBrowser(this.platformId)) return;
     
     const target = event.target as HTMLElement;
+    
+    // Close mobile menu if clicked outside
     if (this.isMobileMenuOpen && 
         !target.closest('.mobile-nav') && 
         !target.closest('.menu-toggle')) {
       this.closeMobileMenu();
+    }
+    
+    // Close submenu if clicked outside
+    if (this.activeSubmenu && 
+        !target.closest('.has-submenu') && 
+        !target.closest('.submenu')) {
+      this.closeAllSubmenus();
     }
   }
 }

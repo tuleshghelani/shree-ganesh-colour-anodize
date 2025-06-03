@@ -29,12 +29,23 @@
                 <span>ABOUT US</span>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item has-submenu" [class.active-dropdown]="activeSubmenu === 'services'">
               <a href="/services" 
                 routerLinkActive="active"
-                class="nav-link">
+                class="nav-link dropdown-toggle"
+                (click)="toggleSubmenu('services', $event)">
                 <span>SERVICES</span>
+                <i class="fas fa-chevron-down dropdown-icon"></i>
               </a>
+              <div class="submenu" [class.active]="activeSubmenu === 'services'">
+                <ul class="submenu-list">
+                  <li *ngFor="let item of serviceSubmenuItems">
+                    <a [href]="item.url" routerLinkActive="active">
+                      <span>{{ item.name }}</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li class="nav-item">
               <a href="/inquiry" 
@@ -103,12 +114,20 @@
             <span>ABOUT US</span>
           </a>
         </li>
-        <li>
-          <a href="/services" 
-             routerLinkActive="active"
-             (click)="closeMobileMenu()">
+        <li class="has-submenu">
+          <a href="javascript:void(0)" 
+             [class.active]="activeSubmenu === 'mobile-services'"
+             (click)="toggleSubmenu('mobile-services', $event)">
             <span>SERVICES</span>
+            <i class="fas fa-chevron-down" [class.rotate]="activeSubmenu === 'mobile-services'"></i>
           </a>
+          <ul class="mobile-submenu" [class.active]="activeSubmenu === 'mobile-services'">
+            <li *ngFor="let item of serviceSubmenuItems">
+              <a [href]="item.url" routerLinkActive="active" (click)="closeMobileMenu()">
+                <span>{{ item.name }}</span>
+              </a>
+            </li>
+          </ul>
         </li>
         <li>
           <a href="/inquiry" 

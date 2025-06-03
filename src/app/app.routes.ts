@@ -13,5 +13,9 @@ export const routes: Routes = [
     path: 'contact-us',
     loadComponent: () => import('./pages/contact-us/contact-us.component').then(m => m.ContactUsComponent)
   },
+  {
+    path: 'services/colour-anodizing',
+    loadComponent: () => import('./pages/colour-anodizing/colour-anodizing.component').then(m => m.ColourAnodizingComponent)
+  },
   // ... other routes
 ];
