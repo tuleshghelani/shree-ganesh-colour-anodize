@@ -22,6 +22,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/chrome-plating/chrome-plating.component').then(m => m.ChromePlatingComponent)
   },
   {
+    path:'services/powder-coating',
+    loadComponent: () => import('./pages/powder-coating/powder-coating.component').then(m => m.PowderCoatingComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }
