@@ -4,6 +4,7 @@ $font-secondary: 'Montserrat', sans-serif;     // Strong, professional for subhe
 $font-body: 'Roboto', sans-serif;             // Clean, readable for body text
 
 // Font Weights
+$weight-light: 300;     // Add this line for light weight
 $weight-regular: 400;
 $weight-medium: 500;
 $weight-semibold: 600;
@@ -28,4 +29,4 @@ $line-height-relaxed: 1.75;
 // Letter Spacing
 $letter-spacing-tight: -0.025em;
 $letter-spacing-normal: 0;
-$letter-spacing-wide: 0.025em; 
+$letter-spacing-wide: 0.025em;

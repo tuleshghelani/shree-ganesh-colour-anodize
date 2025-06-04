@@ -26,6 +26,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/powder-coating/powder-coating.component').then(m => m.PowderCoatingComponent)
   },
   {
+    path: 'gallery',
+    loadComponent: () => import('./pages/gallery/gallery.component').then(m => m.GalleryComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }
