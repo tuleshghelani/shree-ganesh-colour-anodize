@@ -61,10 +61,52 @@ export class PowderCoatingComponent implements OnInit {
     });
     
     this.meta.addTags([
-      { name: 'keywords', content: 'powder coating, electrostatic powder coating, best powder coating, powder painting, powder finish, metal finishing, corrosion resistance, industrial powder coating, best powder coating services' },
+      { name: 'keywords', content: 'powder coating, electrostatic powder coating, best powder coating, powder painting, powder finish, metal finishing, corrosion resistance, industrial powder coating, best powder coating services, powder coating services in India, metal surface treatment, powder application, powder finishing, durable coating, environmentally friendly coating' },
+      { name: 'robots', content: 'index, follow' },
+      { name: 'author', content: 'Shree Ganesh Colour Anodize' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      
+      // Location-specific meta tags
+      { name: 'geo.region', content: 'IN' },
+      { name: 'geo.placename', content: 'India' },
+      { name: 'geo.position', content: '22.270369215203996;70.82591100324079' },
+      { name: 'ICBM', content: '22.270369215203996, 70.82591100324079' },
+      
+      // Open Graph tags for social sharing
       { property: 'og:title', content: 'Premium Electrostatic Powder Coating Services | Shree Ganesh Colour Anodize' },
       { property: 'og:description', content: 'Professional powder coating services with superior durability and exceptional finishes for industrial and decorative applications' },
-      { property: 'og:type', content: 'website' }
+      { property: 'og:image', content: '/assets/services/powder-coating/powder-coating-1.jpg' },
+      { property: 'og:url', content: 'https://shreeganeshcolouranodize.com/services/powder-coating' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:site_name', content: 'Shree Ganesh Colour Anodize' },
+      { property: 'og:locale', content: 'en_IN' },
+      { property: 'og:country-name', content: 'India' },
+      
+      // Twitter Card tags
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: 'Premium Electrostatic Powder Coating Services | Shree Ganesh Colour Anodize' },
+      { name: 'twitter:description', content: 'Professional powder coating services with superior durability and exceptional finishes for industrial and decorative applications' },
+      { name: 'twitter:image', content: '/assets/services/powder-coating/powder-coating-1.jpg' },
+      
+      // Additional SEO tags
+      { name: 'format-detection', content: 'telephone=no' },
+      { name: 'theme-color', content: '#c4282c' },
+      { name: 'application-name', content: 'Shree Ganesh Colour Anodize' },
+      { name: 'apple-mobile-web-app-title', content: 'Shree Ganesh Colour Anodize' },
+      { name: 'apple-mobile-web-app-capable', content: 'yes' },
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
+      
+      // Industry-specific tags
+      { name: 'industry', content: 'Metal Finishing, Surface Treatment, Manufacturing' },
+      { name: 'service-type', content: 'Powder Coating, Electrostatic Coating, Metal Coating' },
+      { name: 'target-audience', content: 'Industrial Manufacturers, Architectural Firms, Furniture Manufacturers' },
+      
+      // Content information
+      { name: 'content-language', content: 'en' },
+      { name: 'revisit-after', content: '7 days' },
+      { name: 'rating', content: 'General' },
+      { name: 'referrer', content: 'no-referrer-when-downgrade' },
+      { name: 'mobile-web-app-capable', content: 'yes' }
     ]);
   }
 

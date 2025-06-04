@@ -30,6 +30,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/gallery/gallery.component').then(m => m.GalleryComponent)
   },
   {
+    path: 'certificates',
+    loadComponent: () => import('./pages/certificate/certificate.component').then(m => m.CertificateComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }

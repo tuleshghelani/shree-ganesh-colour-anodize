@@ -1,0 +1,355 @@
+// Certificate Page Styling
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+@import '../../../styles/effects';
+@import '../../../styles/typography';
+
+$text-white: #fff;
+// Page Banner
+.page-banner {
+  background: linear-gradient(rgba($primary-dark, 0.8), rgba($primary-dark, 0.8)), url('/assets/banner/certificate-banner.jpg') center/cover no-repeat;
+  padding: 6rem 0;
+  color: $text-white;
+  text-align: center;
+  margin-top: 80px;
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: $weight-bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $text-white; 
+  }
+  
+  p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+// Sections Styling
+section {
+  padding: 5rem 0;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+  
+  h2 {
+    font-size: 2rem;
+    font-weight: $weight-bold;
+    color: $primary;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+  
+  .section-divider {
+    height: 4px;
+    width: 80px;
+    background-color: $primary;
+    margin-bottom: 1.5rem;
+    
+    &.centered {
+      margin: 0 auto 1.5rem;
+    }
+  }
+  
+  .lead {
+    font-size: 1.2rem;
+    color: $text-secondary;
+  }
+}
+
+.bg-light {
+  background-color: $background-primary;
+}
+
+// Certificate Cards
+.certificates-display {
+  padding: 5rem 0;
+}
+
+.certificates-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.certificate-card {
+  background: $background-primary;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
+  max-width: 340px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .certificate-image {
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $background-secondary;
+    padding: 1rem;
+    
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.5s ease;
+      
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+  
+  .certificate-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: $primary;
+      font-weight: $weight-semibold;
+      text-align: center;
+    }
+    
+    p {
+      color: $text-secondary;
+      margin-bottom: 0;
+      flex-grow: 1;
+      text-align: center;
+    }
+  }
+}
+
+// Standards Section
+.standards-card {
+  background: $background-primary;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  
+  .standards-icon {
+    font-size: 2.5rem;
+    color: $primary;
+    margin-bottom: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: $primary-dark;
+  }
+  
+  .standards-list {
+    padding-left: 1.5rem;
+    
+    li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      color: $text-secondary;
+      
+      &::before {
+        content: "";
+        position: absolute;
+        left: -1.5rem;
+        top: 0.5rem;
+        width: 8px;
+        height: 8px;
+        background-color: $primary;
+        border-radius: 50%;
+      }
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Benefits Section
+.benefits-section {
+  padding: 5rem 0;
+  background-color: $background-secondary;
+}
+
+.benefits-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.benefit-box {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: $background-primary;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  flex: 1;
+  min-width: 220px;
+  max-width: 280px;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+  
+  .benefit-icon {
+    font-size: 2.5rem;
+    color: $primary;
+    margin-bottom: 1.5rem;
+    
+    i {
+      padding: 1rem;
+      border-radius: 50%;
+      background-color: rgba($primary, 0.1);
+    }
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: $primary;
+  }
+  
+  p {
+    color: $text-secondary;
+    margin-bottom: 0;
+  }
+}
+
+// CTA Section
+.cta-section {
+  background: linear-gradient(rgba($primary-dark, 0.9), rgba($primary-dark, 0.9)), url('/assets/banner/cta-bg.jpg') center/cover no-repeat;
+  padding: 4rem 0;
+  
+  .cta-content {
+    color: $text-white;
+    max-width: 800px;
+    margin: 0 auto;
+    
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: $text-white;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+  }
+  
+  .btn-primary {
+    background-color: $text-white;
+    color: $primary-dark;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-weight: $weight-semibold;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: rgba($text-white, 0.9);
+      transform: translateY(-3px);
+    }
+  }
+}
+
+// Responsive Adjustments
+@media (max-width: 991px) {
+  section {
+    padding: 4rem 0;
+  }
+  
+  .certificates-container {
+    gap: 1.5rem;
+  }
+  
+  .certificate-card .certificate-image {
+    height: 240px;
+  }
+  
+  .benefits-container {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-banner {
+    padding: 4rem 0;
+    
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .standards-card {
+    margin-bottom: 2rem;
+  }
+  
+  .certificate-card .certificate-image {
+    height: 300px;
+  }
+  
+  .benefit-box {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 575px) {
+  section {
+    padding: 3rem 0;
+  }
+  
+  .certificates-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .certificate-card {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .cta-section .cta-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .benefits-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .benefit-box {
+    width: 100%;
+    max-width: 400px;
+  }
+}
