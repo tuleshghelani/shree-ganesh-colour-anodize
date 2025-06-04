@@ -18,6 +18,10 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/colour-anodizing/colour-anodizing.component').then(m => m.ColourAnodizingComponent)
   },
   {
+    path: 'services/chrome-plating',
+    loadComponent: () => import('./pages/chrome-plating/chrome-plating.component').then(m => m.ChromePlatingComponent)
+  },
+  {
     path: '**',
     redirectTo: ''
   }
