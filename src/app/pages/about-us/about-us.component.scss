@@ -1,40 +1,54 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+@import '../../../styles/effects';
+@import '../../../styles/typography';
+$text-white: #fff;
 // Page Banner
 .page-banner {
-  background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('/assets/about-us/banner.jpg') no-repeat center center;
-  background-size: cover;
-  padding: 120px 0;
+  background: linear-gradient(rgba($primary-dark, 0.8), rgba($primary-dark, 0.8)), url('/assets/banner/certificate-banner.jpg') center/cover no-repeat;
+  padding: 6rem 0;
+  color: $text-white;
   text-align: center;
-  color: #fff;
-  margin-bottom: 80px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 80px;
+  margin-bottom: 2rem;
   
   h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: $weight-bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    position: relative;
-    display: inline-block;
-    color: #fff;
-    
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: #DC1E24;
-    }
+    color: $text-white; 
   }
   
   p {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     max-width: 800px;
-    margin: 2rem auto 0;
-    opacity: 0.9;
+    margin: 0 auto;
+  }
+}
+
+// Section Headers
+.section-headers {
+  margin-bottom: 25px;
+  
+  .section-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #2c3e50;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #DC1E24;
+    }
   }
 }
 
