@@ -19,6 +19,29 @@ export class HomeComponent implements OnInit {
   slides = [0, 1, 2, 3]; // Four slides for our main services
   showDesignContent = false;
   
+  // Track active FAQ items
+  activeFaqItem: number | null = 0; // First item is open by default
+  
+  // FAQ items
+  faqItems = [
+    {
+      question: 'What is colour anodizing and how does it benefit my products?',
+      answer: 'Colour anodizing is an electrochemical process that creates a durable, porous oxide layer on aluminum surfaces which can then be dyed in various colors. The benefits include enhanced corrosion resistance, improved wear resistance, increased product lifespan, and aesthetic enhancement with vibrant color options that won\'t chip or peel like paint.'
+    },
+    {
+      question: 'How durable is chrome plating compared to other finishes?',
+      answer: 'Chrome plating offers exceptional durability compared to many other surface finishes. It provides superior hardness (up to 1000 Hv), excellent wear resistance, and outstanding corrosion protection. Chrome-plated surfaces can withstand harsh environments, chemicals, and abrasion much better than painted surfaces and most other decorative finishes, often lasting for decades with proper care.'
+    },
+    {
+      question: 'What materials can be powder coated?',
+      answer: 'Powder coating works best on conductive materials, primarily metals. Common materials suitable for powder coating include steel, aluminum, galvanized and zinc-coated metals, and some metal alloys. While primarily used on metals, some specialized powder coating processes can also be applied to certain non-metallic materials like medium-density fiberboard (MDF) and some composites through pre-treatment processes.'
+    },
+    {
+      question: 'What is your typical turnaround time for orders?',
+      answer: 'Our standard turnaround time varies depending on the type of service, quantity, and complexity of the project. Typically, smaller orders can be completed within 5-7 business days, while larger or more complex projects may require 10-14 business days. For urgent requirements, we offer expedited services subject to availability. We recommend contacting our team for a specific timeline estimate for your project.'
+    }
+  ];
+  
   services = [
     {
       title: 'Colour Anodizing',
@@ -48,7 +71,7 @@ export class HomeComponent implements OnInit {
       rating: 5
     },
     {
-      name: 'Priya Patel',
+      name: 'Priyesh Patel',
       company: 'Modern Interiors',
       comment: 'Their powder coating service is impeccable. The finish quality and durability have made our architectural elements stand out in our designs.',
       rating: 5
@@ -159,5 +182,15 @@ export class HomeComponent implements OnInit {
 
   toggleDesignContent() {
     this.showDesignContent = !this.showDesignContent;
+  }
+  
+  // Toggle FAQ items
+  toggleFaq(index: number) {
+    this.activeFaqItem = this.activeFaqItem === index ? null : index;
+  }
+  
+  // Check if a FAQ item is active
+  isFaqActive(index: number): boolean {
+    return this.activeFaqItem === index;
   }
 }

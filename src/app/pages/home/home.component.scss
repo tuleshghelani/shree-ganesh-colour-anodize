@@ -54,6 +54,7 @@
         p {
           font-size: 1.25rem;
           margin-bottom: 2rem;
+          color: #fff;
           
           @media (max-width: 768px) {
             font-size: 1rem;
@@ -188,10 +189,11 @@
     background: white;
     border-radius: 10px;
     padding: 30px;
-    height: 100%;
+    height: auto;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 30px;
+
     
     &:hover {
       transform: translateY(-10px);
@@ -409,7 +411,7 @@
     background: white;
     border-radius: 10px;
     padding: 30px;
-    height: 100%;
+    height: auto;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     
     .rating {
@@ -834,6 +836,132 @@
       
       @media (max-width: 768px) {
         font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Custom FAQ accordion styling
+.custom-accordion {
+  max-width: 900px;
+  margin: 0 auto;
+  
+  .accordion-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: none;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    .accordion-header {
+      margin: 0;
+      
+      .accordion-button {
+        padding: 20px 30px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: $secondary-dark;
+        background: white;
+        border: none;
+        border-radius: 8px;
+        position: relative;
+        box-shadow: none;
+        transition: all 0.3s ease;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        
+        &::after {
+          content: '\f078';
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          background-image: none;
+          font-size: 14px;
+          color: $primary;
+          margin-left: auto;
+          transition: transform 0.3s ease;
+        }
+        
+        &:not(.collapsed) {
+          color: $primary;
+          background-color: rgba($primary-lightest, 0.2);
+          box-shadow: none;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+          
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+        
+        &:hover {
+          background-color: rgba($primary-lightest, 0.1);
+        }
+        
+        &:focus {
+          box-shadow: none;
+          outline: none;
+          border-color: $primary-light;
+        }
+      }
+    }
+    
+    .accordion-collapse {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      border-top: 1px solid $border-light;
+      
+      &.show {
+        max-height: 500px; // Adjust this value based on your content size
+      }
+      
+      .accordion-body {
+        padding: 25px 30px;
+        
+        p {
+          color: $text-secondary;
+          line-height: 1.8;
+          margin-bottom: 0;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// Add Schema.org FAQ markup for improved SEO
+[itemscope] {
+  .accordion-item {
+    [itemprop="name"] {
+      display: none;
+    }
+    
+    [itemprop="acceptedAnswer"] {
+      [itemprop="text"] {
+        display: inline;
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .custom-accordion {
+    .accordion-item {
+      .accordion-header {
+        .accordion-button {
+          padding: 15px 20px;
+          font-size: 1rem;
+        }
+      }
+      
+      .accordion-body {
+        padding: 15px 20px;
       }
     }
   }
