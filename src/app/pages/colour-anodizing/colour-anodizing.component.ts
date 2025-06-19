@@ -124,20 +124,21 @@ export class ColourAnodizingComponent implements OnInit {
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "Service",
+      "name": "Colour Anodizing",
       "serviceType": "Colour Anodizing",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Shree Ganesh Colour Anodize",
-        "image": `${this.baseUrl}/assets/logo/logo.png`
+        "image": `${this.baseUrl}/assets/logo/logo.png`,
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "142",
+          "reviewCount": "93"
+        },
       },
       "image": `${this.baseUrl}/assets/logo/logo.png`,
       "description": "Professional colour anodizing services with superior durability and vibrant finishes",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "142",
-        "reviewCount": "93"
-      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Anodizing Services",

@@ -2,12 +2,13 @@
   <div class="footer-top">
     <div class="container">
       <!-- Company Info Section -->
-      <div class="footer-section company-info">
+      <div class="footer-section company-info" itemprop="brand" itemscope itemtype="http://schema.org/Brand">
         <div class="logo-wrapper">
           <img src="assets/logo/logo.png" 
                alt="Shree Ganesh Colour Anodize Logo" 
                class="footer-logo"
-               loading="lazy">
+               loading="lazy" 
+               itemprop="logo">
         </div>
         <h3 class="company-name">Shree Ganesh Colour Anodize</h3>
         <p class="company-description">
@@ -22,59 +23,64 @@
       </div>
 
       <!-- Quick Links Section -->
-      <div class="footer-section quick-links">
+      <div class="footer-section quick-links" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <h3 class="footer-title">Quick Links</h3>
         <ul class="footer-list">
-          <li><a href="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
-          <li><a href="/about" routerLinkActive="active">About Us</a></li>
-          <li><a href="/services" routerLinkActive="active">Services</a></li>
-          <li><a href="/gallery" routerLinkActive="active">Gallery</a></li>
-          <li><a href="/certificate" routerLinkActive="active">Certificate</a></li>
-          <li><a href="/contact" routerLinkActive="active">Contact</a></li>
+          <li><a href="/" routerLinkActive="active" itemprop="url" [routerLinkActiveOptions]="{exact: true}" itemprop="url"><span itemprop="name">Home</span></a></li>
+          <li><a href="/about" routerLinkActive="active" itemprop="url"><span itemprop="name">About Us</span></a></li>
+          <li><a href="/services" routerLinkActive="active" itemprop="url"><span itemprop="name">Services</span></a></li>
+          <li><a href="/gallery" routerLinkActive="active" itemprop="url"><span itemprop="name">Gallery</span></a></li>
+          <li><a href="/certificate" routerLinkActive="active" itemprop="url"><span itemprop="name">Certificate</span></a></li>
+          <li><a href="/contact" routerLinkActive="active" itemprop="url"><span itemprop="name">Contact</span></a></li>
         </ul>
       </div>
 
       <!-- Products Section -->
-      <div class="footer-section products">
+      <div class="footer-section products" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <h3 class="footer-title">Our Services</h3>
         <ul class="footer-list">
-          <li><a href="/services/colour-anodizing">Colour Anodizing</a></li>
-          <li><a href="/services/chrome-plating">Chrome Plating</a></li>
-          <li><a href="/services/powder-coating">Powder Coating</a></li>
+          <li><a href="/services/colour-anodizing" itemprop="url"><span itemprop="name">Colour Anodizing</span></a></li>
+          <li><a href="/services/chrome-plating" itemprop="url"><span itemprop="name">Chrome Plating</span></a></li>
+          <li><a href="/services/powder-coating" itemprop="url"><span itemprop="name">Powder Coating</span></a></li>
         </ul>
       </div>
 
       <!-- Contact Section -->
-      <div class="footer-section contact">
+      <div class="footer-section contact" itemscope itemtype="http://schema.org/Organization">
         <h3 class="footer-title">Contact Us</h3>
         <ul class="contact-list">
           <li class="contact-item">
             <i class="fas fa-map-marker-alt"></i>
-            <div>
-              <strong>Meera Udhyog. Street No.3, Plot No.17 , N.H. 8B
-                Nr. Bansidhar Way Bridge, Rajkot, Gujarat - 360002
-                India.</strong>
+            <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <strong>
+                <span itemprop="streetAddress">Meera Udhyog. Street No.3, Plot No.17,<br>
+                  N.H. 8B, Nr. Bansidhar Way Bridge, ,</span> <br>
+                  <span itemprop="addressLocality">Dist. Rajkot, Gujarat - India.</span> - 
+                  <span itemprop="postalCode">360002</span>
+                  <meta itemprop="addressRegion" content="Gujarat">
+                  <meta itemprop="addressCountry" content="IN">                
+                .</strong>
             </div>
           </li>
           <li class="contact-item">
             <i class="fas fa-phone-alt"></i>
             <div>
               <strong>
-                <a href="tel:+919979916168">+91 99799 16168</a></strong>
+                <a href="tel:+919979916168" itemprop="telephone">+91 99799 16168</a></strong>
             </div>
           </li>
           <li class="contact-item">
             <i class="fas fa-phone-alt"></i>
             <div>
               <strong>
-                <a href="tel:+919537057565">+91 95370 57565</a></strong>
+                <a href="tel:+919537057565" itemprop="telephone">+91 95370 57565</a></strong>
             </div>
           </li>
           <li class="contact-item">
             <i class="fas fa-envelope"></i>
             <div>
               <strong>
-                <a href="mailto:info@shreeganeshcolouranodize.com">info&#64;shreeganeshcolouranodize.com</a>
+                <a href="mailto:info@shreeganeshcolouranodize.com" itemprop="email">info&#64;shreeganeshcolouranodize.com</a>
               </strong>
             </div>
           </li>
