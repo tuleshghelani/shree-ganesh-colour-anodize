@@ -300,14 +300,22 @@
         padding-left: 40px;
         
         &:nth-child(even) {
-          margin-left: 0;
+          margin-left: -50px;
           text-align: right;
           padding-left: 0;
-          padding-right: 40px;
+          padding-right: 50px;
           
           .step-number {
             left: auto;
             right: -25px;
+            @media screen and (min-width: 768px) {
+              width: 50px;
+              height: 50px;          
+            }
+            @media screen and (max-width: 767px)  {
+              width: 35px;
+              height: 35px;             
+            }
           }
         }
       }
@@ -320,8 +328,14 @@
         position: absolute;
         top: 0;
         left: -25px;
-        width: 50px;
-        height: 50px;
+        @media screen and (min-width: 768px) {
+          width: 50px;
+          height: 50px;          
+        }
+        @media screen and (max-width: 767px)  {
+          width: 35px;
+          height: 35px;             
+        }
         background: $primary;
         color: white;
         border-radius: 50%;
@@ -343,6 +357,7 @@
         
         p {
           color: $text-secondary;
+          width: 85%;
         }
       }
     }
@@ -637,14 +652,19 @@
     width: 100% !important;
     margin-left: 0 !important;
     text-align: left !important;
+    padding-right: 10px !important; /* Add right padding to prevent text cutoff */
     
     &:nth-child(even) {
-      padding-right: 0 !important;
+      padding-right: 10px !important;
       
       .step-number {
-        left: -25px !important;
+        left: 10px !important; /* Move step numbers to the right to prevent cutoff */
         right: auto !important;
       }
+    }
+    
+    .step-number {
+      left: 10px !important; /* Move all step numbers to the right to prevent cutoff */
     }
   }
   
