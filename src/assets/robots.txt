@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shreeganeshcolouranodize.com/sitemap.xml 
+Sitemap: https://www.shreeganeshcolouranodize.com/sitemap.xml 

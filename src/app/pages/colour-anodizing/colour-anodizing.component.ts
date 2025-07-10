@@ -1,8 +1,10 @@
-import { Component, OnInit, inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, inject, PLATFORM_ID, Inject } from '@angular/core';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Meta, Title } from '@angular/platform-browser';
+import { Meta, Title, TransferState, makeStateKey } from '@angular/platform-browser';
 
+const PRODUCT_SCHEMA_KEY = makeStateKey<string>('COLOUR_ANODIZE_SCHEMA');
+const BUSINESS_SCHEMA_KEY = makeStateKey<string>('COLOUR_ANODIZE_BUSINESS_SCHEMA');
 @Component({
   selector: 'app-colour-anodizing',
   standalone: true,
@@ -12,8 +14,14 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class ColourAnodizingComponent implements OnInit {
   private platformId = inject(PLATFORM_ID);
-  private title = inject(Title);
-  private meta = inject(Meta);
+  private baseUrl = 'https://www.shreeganeshcolouranodize.com';
+
+  constructor(
+    private meta: Meta,
+    private title: Title,
+    @Inject(DOCUMENT) private document: Document,
+    private transferState: TransferState
+  ) {}
 
   faqItems = [
     {
@@ -51,6 +59,7 @@ export class ColourAnodizingComponent implements OnInit {
   ngOnInit() {
     this.setupSEO();
     this.setupStructuredData();
+    this.setFaqStructuredData();
   }
 
   private setupSEO() {
@@ -115,12 +124,20 @@ export class ColourAnodizingComponent implements OnInit {
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "Service",
+      "name": "Colour Anodizing",
       "serviceType": "Colour Anodizing",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Shree Ganesh Colour Anodize",
-        "image": "/assets/logo.png"
+        "image": `${this.baseUrl}/assets/logo/logo.png`,
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "142",
+          "reviewCount": "93"
+        },
       },
+      "image": `${this.baseUrl}/assets/logo/logo.png`,
       "description": "Professional colour anodizing services with superior durability and vibrant finishes",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -140,29 +157,36 @@ export class ColourAnodizingComponent implements OnInit {
       }
     };
 
-    const faqSchema = {
+    this.transferState.set(PRODUCT_SCHEMA_KEY, JSON.stringify(structuredData));
+    // Only add script tag in browser environment
+    if (isPlatformBrowser(this.platformId)) {
+      const script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      this.document.head.appendChild(script);
+    }
+  }
+
+  private setFaqStructuredData(): void {
+    const faqStructuredData = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": this.faqItems.map(item => ({
+      "mainEntity": this.faqItems.map(faq => ({
         "@type": "Question",
-        "name": item.question,
+        "name": faq.question,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": item.answer
+          "text": faq.answer
         }
       }))
     };
-
+    
+    // Only add script tag in browser environment
     if (isPlatformBrowser(this.platformId)) {
-      const script = document.createElement('script');
+      const script = this.document.createElement('script');
       script.type = 'application/ld+json';
-      script.text = JSON.stringify(structuredData);
-      document.head.appendChild(script);
-
-      const faqScript = document.createElement('script');
-      faqScript.type = 'application/ld+json';
-      faqScript.text = JSON.stringify(faqSchema);
-      document.head.appendChild(faqScript);
+      script.text = JSON.stringify(faqStructuredData);
+      this.document.head.appendChild(script);
     }
   }
 }
