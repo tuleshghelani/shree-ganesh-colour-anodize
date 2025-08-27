@@ -16,6 +16,7 @@ export class GalleryComponent implements OnInit {
   
   // Gallery images array
   galleryImages: string[] = [];
+  exhibitionImages: string[] = [];
   selectedImage: string | null = null;
   showModal: boolean = false;
   
@@ -38,8 +39,11 @@ export class GalleryComponent implements OnInit {
   
   private loadGalleryImages() {
     // Load images from 1.webp to 18.webp
-    for (let i = 1; i <= 18; i++) {
+    for (let i = 1; i <= 17; i++) {
       this.galleryImages.push(`assets/gallery/${i}.webp`);
+    }
+    for (let i = 101; i <= 101; i++) {
+      this.exhibitionImages.push(`assets/gallery/${i}.webp`);
     }
   }
   

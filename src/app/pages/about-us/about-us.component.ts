@@ -21,7 +21,7 @@ export class AboutUsComponent implements OnInit {
     {
       year: '2010',
       title: 'Company Foundation',
-      description: 'Established with a vision to provide premium surface treatment solutions'
+      description: 'Established with a vision to provide premium surface treatment solutions. Started operations in a 900 sq. ft. facility.'
     },
     {
       year: '2012',
@@ -34,6 +34,11 @@ export class AboutUsComponent implements OnInit {
       description: 'Achieved ISO 9001 certification for our quality management systems'
     },
     {
+      year: '2017',
+      title: 'Facility Growth Milestone and Skilled Labour Expansion',
+      description: 'Significant capacity expansion, growing from the initial 900 sq. ft. to over 25,000 sq. ft. with skilled labour.'
+    },
+    {
       year: '2020',
       title: 'Service Innovation',
       description: 'Introduced new eco-friendly processes and expanded service offerings'
@@ -41,7 +46,7 @@ export class AboutUsComponent implements OnInit {
     {
       year: '2025',
       title: 'New Unit',
-      description: 'Established a new unit for anodizing, chrome plating and powder coating services'
+      description: 'Established a new unit for anodizing, chrome plating and powder coating services; total production area reached 72,000 sq. ft.'
     }
   ];
   

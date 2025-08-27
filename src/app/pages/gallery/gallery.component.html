@@ -9,6 +9,26 @@
   <section class="content-section">
     <div class="container">
       <div class="gallery-block">
+        <h2>Exhibition</h2>
+        <p class="gallery-intro">We are exhibiting at the following exhibitions:</p>
+        
+        <div class="gallery-grid">
+          <div class="gallery-item" *ngFor="let image of exhibitionImages">
+            <div class="image-wrapper" (click)="openImageModal(image)">
+              <img 
+                [src]="image" 
+                [alt]="'Premium metal finishing project by Shree Ganesh Colour Anodize'" 
+                loading="lazy"
+                class="gallery-image"
+              >
+              <div class="image-overlay">
+                <span class="view-icon">+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-block">
         <h2>Premium Metal Finishing Showcase</h2>
         <p class="gallery-intro">Browse through our collection of high-quality colour anodizing, chrome plating, and powder coating projects that demonstrate our commitment to excellence and precision.</p>
         

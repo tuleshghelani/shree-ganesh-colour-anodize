@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   faqItems = [
     {
       question: 'What is colour anodizing and how does it benefit my products?',
-      answer: 'Colour anodizing is an electrochemical process that creates a durable, porous oxide layer on aluminum surfaces which can then be dyed in various colors. The benefits include enhanced corrosion resistance, improved wear resistance, increased product lifespan, and aesthetic enhancement with vibrant color options that won\'t chip or peel like paint.'
+      answer: 'Colour anodizing is an electrochemical process that creates a durable, porous oxide layer on aluminum surfaces which can then be dyed in various colors. The benefits include enhanced corrosion resistance, improved wear resistance, increased product lifespan, and aesthetic enhancement with vibrant colour options that won\'t chip or peel like paint.'
     },
     {
       question: 'How durable is chrome plating compared to other finishes?',
@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
       title: 'Colour Anodizing',
       description: 'Premium colour anodizing services for aluminum components with superior durability and vibrant finishes that resist corrosion and wear.',
       icon: 'fa-palette',
-      benefits: ['Corrosion resistance', 'Wear resistance', 'Vibrant color options', 'Enhanced durability', 'Custom finish options']
+      benefits: ['Corrosion resistance', 'Wear resistance', 'Vibrant colour options', 'Enhanced durability', 'Custom finish options','Finishing with 5-25 micron']
     },
     {
       title: 'Chrome Plating',
@@ -66,19 +66,19 @@ export class HomeComponent implements OnInit {
   testimonials = [
     {
       name: 'Rahul Sharma',
-      company: 'AutoParts Ltd',
+      company: '',
       comment: 'The colour anodizing service provided by Shree Ganesh exceeded our expectations. The consistent quality and vibrant finishes have helped elevate our products.',
       rating: 5
     },
     {
       name: 'Priyesh Patel',
-      company: 'Modern Interiors',
+      company: '',
       comment: 'Their powder coating service is impeccable. The finish quality and durability have made our architectural elements stand out in our designs.',
       rating: 5
     },
     {
       name: 'Vikram Singh',
-      company: 'Industrial Solutions',
+      company: '',
       comment: "We've been using Shree Ganesh's chrome plating services for our precision components for years. Their attention to detail and quality control are excellent.",
       rating: 4
     }
